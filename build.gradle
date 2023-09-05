@@ -17,8 +17,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'javax.xml.bind:jaxb-api:2.3.0'
+	implementation 'com.oracle.database.jdbc:ojdbc8:19.8.0.0' // Substitua pela versão adequada do driver Oracle
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+
 }
 
 
