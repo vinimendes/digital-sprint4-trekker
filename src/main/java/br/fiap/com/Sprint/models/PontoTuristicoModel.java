@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -25,9 +26,11 @@ public class PontoTuristicoModel implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long cd_pt_turistico;
 	
-	@OneToMany
+	//@OneToMany
+	//private List<DestinoModel> cd_destino;
+	@ManyToOne
 	@JoinColumn(nullable = true)
-	private List<DestinoModel> cd_destino;
+	private DestinoModel cd_destino;
 	
 	@OneToOne
 	@JoinColumn(nullable = false)
@@ -38,7 +41,7 @@ public class PontoTuristicoModel implements Serializable{
 	
 	public PontoTuristicoModel() {}
 
-	public PontoTuristicoModel(long cd_pt_turistico, List<DestinoModel> cd_destino, EnderecoModel cd_endereco,
+	public PontoTuristicoModel(long cd_pt_turistico, DestinoModel cd_destino, EnderecoModel cd_endereco,
 			String nm_pt_turistico) {
 		super();
 		this.cd_pt_turistico = cd_pt_turistico;
@@ -57,11 +60,11 @@ public class PontoTuristicoModel implements Serializable{
 		this.cd_pt_turistico = cd_pt_turistico;
 	}
 	
-	public List<DestinoModel> getCd_destino() {
+	public DestinoModel getCd_destino() {
 		return cd_destino;
 	}
 
-	public void setCd_destino(List<DestinoModel> cd_destino) {
+	public void setCd_destino(DestinoModel cd_destino) {
 		this.cd_destino = cd_destino;
 	}
 

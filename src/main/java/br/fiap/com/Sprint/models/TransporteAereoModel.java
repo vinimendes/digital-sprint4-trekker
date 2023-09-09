@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -25,10 +26,12 @@ public class TransporteAereoModel implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long cd_transp_aereo;
 	
-	// COlocar true aq
-	@OneToMany
+	
+	//@OneToMany
+	//private List<DestinoModel> cd_destino;
+	@ManyToOne
 	@JoinColumn(nullable = true)
-	private List<DestinoModel> cd_destino;
+	private DestinoModel cd_destino;
 	
 	@Column(length = 150, nullable = false)
 	private String nm_companhia;
@@ -40,7 +43,7 @@ public class TransporteAereoModel implements Serializable{
 	public TransporteAereoModel() {}
 
 
-	public TransporteAereoModel(long cd_transp_aereo, List<DestinoModel> cd_destino, String nm_companhia,
+	public TransporteAereoModel(long cd_transp_aereo, DestinoModel cd_destino, String nm_companhia,
 			BigDecimal vl_passagem) {
 		super();
 		this.cd_transp_aereo = cd_transp_aereo;
@@ -60,12 +63,12 @@ public class TransporteAereoModel implements Serializable{
 	}
 
 
-	public List<DestinoModel> getCd_destino() {
+	public DestinoModel getCd_destino() {
 		return cd_destino;
 	}
 
 
-	public void setCd_destino(List<DestinoModel> cd_destino) {
+	public void setCd_destino(DestinoModel cd_destino) {
 		this.cd_destino = cd_destino;
 	}
 
