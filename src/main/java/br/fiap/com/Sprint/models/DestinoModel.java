@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="T_TKR_DESTINO")
-public class DestinoModel implements Serializable{
+public class DestinoModel implements Serializable {
 	
 
 	private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public class DestinoModel implements Serializable{
 	private long cd_destino;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private UsuarioModel cd_usuario;
 	
 	@Column(length = 120, nullable = false)

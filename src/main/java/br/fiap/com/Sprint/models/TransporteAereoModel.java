@@ -25,8 +25,9 @@ public class TransporteAereoModel implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long cd_transp_aereo;
 	
+	// COlocar true aq
 	@OneToMany
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private List<DestinoModel> cd_destino;
 	
 	@Column(length = 150, nullable = false)

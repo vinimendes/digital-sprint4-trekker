@@ -26,7 +26,7 @@ public class PontoTuristicoModel implements Serializable{
 	private long cd_pt_turistico;
 	
 	@OneToMany
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private List<DestinoModel> cd_destino;
 	
 	@OneToOne
