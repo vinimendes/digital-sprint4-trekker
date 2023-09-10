@@ -7,3 +7,7 @@ Solução desenvolvida para servir como um gerenciamento do fluxo de dados entre
 ## Vídeo sobre a aplicação funcionando
 ### Matéria - Digital Business
 [Sprint 3 - Digital Business](https://youtu.be/viJYBkT7Ulo)
+
+## Documentação Trekker 
+### Matéria - Enterprise Application
+[Sprint 3 - Enterprise Application](Challenge3-Enterprise-Trekker.pdf)
