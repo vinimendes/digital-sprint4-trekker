@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70cd3136-4d4d-44d5-b7f1-900142365f2c" name="Changes" comment="ajuste para conectar com o banco oracle" />
+    <list default="true" id="70cd3136-4d4d-44d5-b7f1-900142365f2c" name="Changes" comment="excluindo challenge 2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/controllers/RoteiroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/dtos/RoteiroDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/models/RoteiroResponseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/models/gpt/ChoiceModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/models/gpt/GptRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/models/gpt/MessageModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/models/gpt/RootModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/models/gpt/UsageModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/services/GptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/controllers/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/controllers/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,27 +66,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Cecilia/IdeaProjects/challenge3-digital-trekker",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "558c5dc6051618365da09cc8f63a4e94",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Cecilia/IdeaProjects/challenge3-digital-trekker&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;558c5dc6051618365da09cc8f63a4e94&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.SprintApplication">
+    <configuration name="GptService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.fiap.com.Sprint.services.GptService" />
+      <module name="Sprint.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.fiap.com.Sprint.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="challenge2-digital-trekker" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -123,12 +150,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.GptService" />
       <item itemvalue="Gradle.challenge2-digital-trekker" />
       <item itemvalue="Gradle.challenge3-digital-trekker [dependencies]" />
       <item itemvalue="Spring Boot.SprintApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GptService" />
         <item itemvalue="Gradle.challenge3-digital-trekker [dependencies]" />
       </list>
     </recent_temporary>
@@ -147,6 +176,14 @@
       <workItem from="1693863347184" duration="17000" />
       <workItem from="1693865943825" duration="650000" />
       <workItem from="1693873785670" duration="5481000" />
+      <workItem from="1694365114851" duration="10027000" />
+      <workItem from="1697758198154" duration="8085000" />
+      <workItem from="1697845827481" duration="2490000" />
+      <workItem from="1698161160694" duration="713000" />
+      <workItem from="1698360247257" duration="12309000" />
+      <workItem from="1698445880026" duration="10247000" />
+      <workItem from="1698707559212" duration="2251000" />
+      <workItem from="1698870134790" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="sprint 3">
       <option name="closed" value="true" />
@@ -164,15 +201,55 @@
       <option name="project" value="LOCAL" />
       <updated>1693880383924</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="excluindo vídeo do projeto">
+      <option name="closed" value="true" />
+      <created>1694380313360</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694380313360</updated>
+    </task>
+    <task id="LOCAL-00004" summary="excluindo challenge 2">
+      <option name="closed" value="true" />
+      <created>1694382250487</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694382250487</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sprint 3" />
     <MESSAGE value="ajuste para conectar com o banco oracle" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajuste para conectar com o banco oracle" />
+    <MESSAGE value="excluindo vídeo do projeto" />
+    <MESSAGE value="excluindo challenge 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="excluindo challenge 2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/fiap/com/Sprint/services/GptService.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

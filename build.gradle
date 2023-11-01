@@ -18,7 +18,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'javax.xml.bind:jaxb-api:2.3.0'
-	//implementation 'com.oracle.database.jdbc:ojdbc8:19.8.0.0' // Substitua pela versão adequada do driver Oracle
+	implementation 'com.oracle.database.jdbc:ojdbc8:19.8.0.0' // Substitua pela versão adequada do driver Oracle
 	
 	// https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
 	implementation 'com.microsoft.sqlserver:mssql-jdbc:12.4.1.jre11'
