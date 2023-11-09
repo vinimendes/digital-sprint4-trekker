@@ -37,7 +37,7 @@ public class GptService {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://api.openai.com/v1/chat/completions"))
                     .header("Content-Type", "application/json")
-                    .header("Authorization", "Bearer {COLOQUE SUA CHAVE AQUI}")
+                    .header("Authorization", "Bearer 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")
                     .method("POST", HttpRequest.BodyPublishers.ofString(json))
                     .build();
             HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
