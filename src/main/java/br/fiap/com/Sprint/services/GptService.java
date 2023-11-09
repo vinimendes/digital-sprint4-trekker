@@ -26,6 +26,10 @@ public class GptService {
 
     public static Object postMessage(RoteiroDto roteiroDto){
         try{
+
+            // API_KEY da Variavel de Ambiente:
+            String apiKeyGpt = System.getenv("API_KEY_GPT");
+
             ArrayList<MessageModel> messages = new ArrayList<MessageModel>();
             messages.add(new MessageModel("user", "Desejo viajar de:" + roteiroDto.getTo() + ", para:" + roteiroDto.getFrom() + ", durante " + roteiroDto.getDays() + " dias. Simule um roteiro de viagem com esses dados."));
             messages.add(new MessageModel("system", "gere um roteiro seguindo esse modelo de JSON {\"city\":\"\",\"foods\":[{\"nome\":\"\",\"preco\":0.0}],\"accomodations\":[{\"nome\":\"\",\"preco\":0.0}],\"turism\":[\"\"],\"transport\":[{\"nome\":\"\",\"preco\":0.0}]}. Na parte de acommodations coloque o nome certos dos hoteis"));
@@ -37,7 +41,7 @@ public class GptService {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://api.openai.com/v1/chat/completions"))
                     .header("Content-Type", "application/json")
-                    .header("Authorization", "Bearer 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")
+                    .header("Authorization", "Bearer " + apiKeyGpt)
                     .method("POST", HttpRequest.BodyPublishers.ofString(json))
                     .build();
             HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
