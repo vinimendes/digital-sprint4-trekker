@@ -31,7 +31,7 @@ public class GptService {
             String apiKeyGpt = System.getenv("API_KEY_GPT");
 
             ArrayList<MessageModel> messages = new ArrayList<MessageModel>();
-            messages.add(new MessageModel("user", "Desejo viajar de:" + roteiroDto.getTo() + ", para:" + roteiroDto.getFrom() + ", durante " + roteiroDto.getDays() + " dias. Simule um roteiro de viagem com esses dados."));
+            messages.add(new MessageModel("user", "Desejo viajar de:" + roteiroDto.getFrom() + ", para:" + roteiroDto.getTo() + ", durante " + roteiroDto.getDays() + " dias. Simule um roteiro de viagem com esses dados."));
             messages.add(new MessageModel("system", "gere um roteiro seguindo esse modelo de JSON {\"city\":\"\",\"foods\":[{\"nome\":\"\",\"preco\":0.0}],\"accomodations\":[{\"nome\":\"\",\"preco\":0.0}],\"turism\":[\"\"],\"transport\":[{\"nome\":\"\",\"preco\":0.0}]}. Na parte de acommodations coloque o nome certos dos hoteis"));
             GptRequest gptRequest = new GptRequest();
             gptRequest.setModel("gpt-3.5-turbo");
