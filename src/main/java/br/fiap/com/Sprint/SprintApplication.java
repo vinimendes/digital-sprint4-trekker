@@ -15,7 +15,7 @@ public class SprintApplication {
 
 	@GetMapping("/")
 	public String index() {
-		return "Hello" ;
+		return "Api Trekker " ;
 	}
 	
 }
