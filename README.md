@@ -4,40 +4,26 @@ Solução desenvolvida para servir como um gerenciamento do fluxo de dados entre
 ## Arquitetura da Solução
 <img src="cg3_api_trekker.png">
 
-## Vídeo sobre a aplicação funcionando
-### Matéria - Digital Business
-[Sprint 3 - Digital Business](https://youtu.be/viJYBkT7Ulo)
-
-## Documentação Trekker 
-### Matéria - Enterprise Application
-[Sprint 3 - Enterprise Application](https://github.com/cecilianeves22/digital-sprint3-trekker/blob/088c9acbcf22d6501b31f0e6d1fce1480f99a3a0/Challenge3-Enterprise-Trekker.pdf.pdf)
-
 ## Deploy
 ### Pré-requisitos:
-- Ter instalado o Gradle (Para buildar projeto)
-- Editar o arquivo `application.properties` em `src\main\resources\application.properties` com as credenciais do banco
+- Ter criado os recursos: Web App e SQL Azure (PaaS)
+- Criar as variáveis de ambiente para `BANCO_USUARIO`, `BANCO_SENHA` e `API_KEY_GPT` no `Painel do Web App` > `Configurações` > `New Application Setting`
+- Ou através do `App settings` disponível no momento da configuração do deploy do `Azure App Service deploy`
 
 ### Passo a passo
-Clone o repositório:
-```bash
-git clone https://github.com/cecilianeves22/digital-sprint3-trekker.git
-```
-Acesse a pasta:
-```bash
-cd digital-sprint3-trekker
-```
-Após editar as credenciais do arquivo `application.properties` faça o build:
-```bash
-gradle build
-```
-Será gerado um `Sprint-0.0.1-SNAPSHOT.jar` em `/build/libs/.`. Realize o deploy desse arquivo para o Web App do Azure através do VScode (ou outro programa).
+- Para executar o deploy basta linkar o repositório no processo de configuração do `CI` e habilitar o a opção de `Enable continuous integration ` na aba `Triggers`. <br>
+- Certifique-se que as credenciais foram adicionadas nas variáveis de ambiente <br>
+- Uma vez feito esses passos basta realizar um `commit` para que o CI seja acionado e as etapas deste sendo executadas com sucesso o processo de deploy será feito
+de forma automatica
+
+
 ### JSON utilizado em vídeo:
 - Usuário: `/usuario` - Exemplo:
 ```
 {
-    "nm_usuario": "Carla Fernandes",
-    "ds_email": "cacafernan@gmail.com",
-    "ds_senha": "EN&Kpk3f"
+    "nm_usuario": "Carlos Azevedo",
+    "ds_email": "carlin3721@dayrep.com",
+    "ds_senha": "emoop3keeTh"
 }
 ```
 - Destino: `/destino` - Exemplo:
@@ -46,10 +32,18 @@ Será gerado um `Sprint-0.0.1-SNAPSHOT.jar` em `/build/libs/.`. Realize o deploy
     "cd_usuario": {
         "cd_usuario": 5
     },
-    "nm_destino": "Paris",
-    "qt_dias": 10,
-    "nm_partida": "RJ"
+    "nm_destino": "Londres",
+    "qt_dias": 8,
+    "nm_partida": "SP"
+}
+```
+
+- Roteiro: `/roteiro` - Exemplo:
+```{
+    "from": "São Paulo",
+    "to": "Recife",
+    "days": 4
 }
 ```
 ### Vídeo de demonstração para a matéria de `DevOps and Cloud Computing`
-[![Demo](https://img.youtube.com/vi/oMwFXzfBf9s/maxresdefault.jpg)](https://www.youtube.com/watch?v=oMwFXzfBf9s)
+[![Demonstracao](https://img.youtube.com/vi/O4-YRSMzWVo/maxresdefault.jpg)](https://www.youtube.com/watch?v=O4-YRSMzWVo)
