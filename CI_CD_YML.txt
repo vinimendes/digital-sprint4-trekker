@@ -1,0 +1,34 @@
+pool:
+  name: Azure Pipelines
+  demands: java
+steps:
+- task: Gradle@2
+  displayName: 'gradlew build'
+  inputs:
+    gradleWrapperFile: '$(Parameters.wrapperScript)'
+    tasks: '$(Parameters.tasks)'
+    testRunTitle: 'Testes de Código'
+    jdkVersionOption: 1.17
+
+- task: CopyFiles@2
+  displayName: 'Copiar arquivos para: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.jar'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publicar artefato: app-api'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: 'app-api'
+
+steps:
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Web App Deploy - Trekker API'
+  inputs:
+    azureSubscription: '$(Parameters.ConnectedServiceName)'
+    appType: '$(Parameters.WebAppKind)'
+    WebAppName: '$(Parameters.WebAppName)'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/Sprint-0.0.1-SNAPSHOT.jar'
+    AppSettings: '-BANCO_USUARIO "<BANCO_USUARIO>" -BANCO_SENHA "<BANCO_SENHA>" -API_KEY_GPT "<API_KEY_GPT>"'

@@ -1,0 +1,125 @@
+DROP TABLE t_tkr_comidas; 
+DROP TABLE t_tkr_destino; 
+DROP TABLE t_tkr_hotel; 
+DROP TABLE t_tkr_pontos_turisticos; 
+DROP TABLE t_tkr_transporte_aereo; 
+DROP TABLE t_tkr_usuario; 
+DROP TABLE t_tkr_valores; 
+DROP TABLE t_tkr_erros; 
+DROP TABLE t_tkr_gatilhos_usuario; 
+ 
+
+CREATE TABLE t_tkr_comida ( 
+    cd_comida INT NOT NULL, 
+    cd_destino INT NOT NULL, 
+    nm_comida VARCHAR(150) NOT NULL, 
+    vl_comida DECIMAL(5, 2) NOT NULL, 
+    PRIMARY KEY (cd_comida) 
+); 
+
+ 
+
+CREATE TABLE t_tkr_destino ( 
+    cd_destino INT NOT NULL, 
+    cd_usuario INT NOT NULL, 
+    nm_destino VARCHAR(130) NOT NULL, 
+    qt_dias INT NOT NULL, 
+    nm_partida CHAR(2) NOT NULL, 
+    PRIMARY KEY (cd_destino) 
+); 
+
+ 
+
+CREATE TABLE t_tkr_hotel ( 
+    cd_hotel INT NOT NULL, 
+    cd_destino INT NOT NULL, 
+    nm_hotel VARCHAR(150) NOT NULL, 
+    vl_diaria DECIMAL(6, 2) NOT NULL, 
+    PRIMARY KEY (cd_hotel) 
+); 
+
+ 
+
+CREATE UNIQUE INDEX t_tkr_hotel__idx ON t_tkr_hotel (cd_destino); 
+ 
+CREATE TABLE t_tkr_ponto_turistico ( 
+    cd_pt_turistico INT NOT NULL, 
+    cd_destino INT NOT NULL, 
+    nm_pt_turistico VARCHAR(300) NOT NULL, 
+    PRIMARY KEY (cd_pt_turistico) 
+); 
+
+ 
+
+CREATE TABLE t_tkr_transporte_aereo ( 
+    cd_transp_aereo INT NOT NULL, 
+    cd_destino INT NOT NULL, 
+    nm_companhia VARCHAR(150) NOT NULL, 
+    vl_passagem DECIMAL(9, 2) NOT NULL, 
+    PRIMARY KEY (cd_transp_aereo) 
+); 
+
+ 
+
+CREATE UNIQUE INDEX t_tkr_transporte_aereo__idx ON t_tkr_transporte_aereo (cd_destino); 
+
+ 
+
+CREATE TABLE t_tkr_usuario ( 
+    cd_usuario INT NOT NULL, 
+    nm_usuario VARCHAR(130) NOT NULL, 
+    ds_email VARCHAR(100) NOT NULL, 
+    ds_senha VARCHAR(80) NOT NULL, 
+    PRIMARY KEY (cd_usuario), 
+    CONSTRAINT t_tkr_usuario_ds_email_un UNIQUE (ds_email) 
+); 
+
+ 
+
+CREATE TABLE t_tkr_valores ( 
+    cd_valores INT NOT NULL, 
+    cd_destino INT NOT NULL, 
+    vl_diario DECIMAL(8, 2), 
+    vl_total DECIMAL(10, 2), 
+    PRIMARY KEY (cd_valores) 
+); 
+
+ 
+
+CREATE UNIQUE INDEX t_tkr_valores__idx ON t_tkr_valores (cd_destino); 
+
+ 
+
+ALTER TABLE t_tkr_comida 
+    ADD CONSTRAINT fk_tkr_comida_destino FOREIGN KEY (cd_destino) 
+        REFERENCES t_tkr_destino (cd_destino); 
+
+ 
+
+ALTER TABLE t_tkr_destino 
+    ADD CONSTRAINT fk_tkr_destino_usuario FOREIGN KEY (cd_usuario) 
+        REFERENCES t_tkr_usuario (cd_usuario); 
+
+ 
+
+ALTER TABLE t_tkr_hotel 
+    ADD CONSTRAINT fk_tkr_hotel_destino FOREIGN KEY (cd_destino) 
+        REFERENCES t_tkr_destino (cd_destino); 
+
+ 
+
+ALTER TABLE t_tkr_ponto_turistico 
+    ADD CONSTRAINT fk_tkr_pt__destino FOREIGN KEY (cd_destino) 
+        REFERENCES t_tkr_destino (cd_destino); 
+
+ 
+
+ALTER TABLE t_tkr_valores 
+    ADD CONSTRAINT fk_tkr_valores_destino FOREIGN KEY (cd_destino) 
+        REFERENCES t_tkr_destino (cd_destino); 
+
+ 
+
+ALTER TABLE t_tkr_transporte_aereo 
+    ADD CONSTRAINT fk_transporte_destino FOREIGN KEY (cd_destino) 
+        REFERENCES t_tkr_destino (cd_destino);
